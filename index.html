@@ -163,7 +163,7 @@
             
         </h1>
         <div class="content">
-            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    Redirect permanent / https://www.example.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">    DocumentRoot /home/user/example/www</span><br><span class="line">    ErrorDocument 503 /maintenance.html</span><br><span class="line">    ProxyRequests on</span><br><span class="line">    ProxyPass /maintenance.html !</span><br><span class="line">    ProxyPass / http://localhost:9090/ retry=0</span><br><span class="line">    ProxyPassReverse / http://localhost:9090/ retry=0</span><br><span class="line">    # &#x5F3A;&#x5236;https</span><br><span class="line">    RewriteEngine on</span><br><span class="line">    RewriteCond  %{HTTPS} !=on</span><br><span class="line">    RewriteRule  ^(.*) https://%{SERVER_NAME}$1 [L,R]</span><br><span class="line">    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    RewriteRule .* - [F]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight apache hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> example.com</span><br><span class="line">    <span class="hljs-attribute">Redirect</span> permanent / https://www.example.com/</span><br><span class="line"><span class="hljs-section">&lt;/VirtualHost&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> www.example.com</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /home/user/example/www</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ErrorDocument</span></span> 503 /maintenance.html</span><br><span class="line">    <span class="hljs-attribute">ProxyRequests</span> <span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute">ProxyPass</span> /maintenance.html !</span><br><span class="line">    <span class="hljs-attribute">ProxyPass</span> / http://localhost:9090/ retry=0</span><br><span class="line">    <span class="hljs-attribute">ProxyPassReverse</span> / http://localhost:9090/ retry=0</span><br><span class="line">    <span class="hljs-comment"># &#x5F3A;&#x5236;https</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteEngine</span></span> <span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteCond</span></span>  <span class="hljs-variable">%{HTTPS}</span> !=<span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteRule</span></span>  ^(.*) https://<span class="hljs-variable">%{SERVER_NAME}</span><span class="hljs-number">$1</span><span class="hljs-meta"> [L,R]</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteCond</span></span> <span class="hljs-variable">%{REQUEST_METHOD}</span> ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteRule</span></span> .* -<span class="hljs-meta"> [F]</span></span><br><span class="line"><span class="hljs-section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -180,6 +180,12 @@
 
     <div class="card">
     
+    <div class="card-image">
+        <a href="/2019/07/02/微信JSSDK语音开发大致思路/" class="image is-7by1">
+            <img class="thumbnail" src="https://source.unsplash.com/random" alt="微信JSSDK语音开发大致思路">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
@@ -190,7 +196,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3 minutes read (About 419 words)
+                    3 minutes read (About 420 words)
                 </span>
                 
                 
@@ -204,23 +210,16 @@
         </h1>
         <div class="content">
             <h2 id="&#x6CE8;&#x518C;&#x5FAE;&#x4FE1;jssdk"><a href="#&#x6CE8;&#x518C;&#x5FAE;&#x4FE1;jssdk" class="headerlink" title="&#x6CE8;&#x518C;&#x5FAE;&#x4FE1;jssdk"></a>&#x6CE8;&#x518C;&#x5FAE;&#x4FE1;jssdk</h2><p>&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x5927;&#x5806;&#x5570;&#x55E6;&#x7684;&#x4E8B;&#x60C5;&#x505A;&#xFF0C;&#x5148;&#x5728;&#x540E;&#x53F0;&#x505A;&#x7B7E;&#x540D;&#xFF0C;&#x83B7;&#x53D6;ticket&#xFF0C;signnature&#xFF0C;appid&#x7B49;&#x7B49;&#xFF0C;&#x53EF;&#x501F;&#x52A9;XX-API&#x4E4B;&#x7C7B;&#x7684;&#x8F6E;&#x5B50;&#x3002;&#x7136;&#x540E;&#x5224;&#x65AD;&#x6D4F;&#x89C8;&#x5668;&#x7C7B;&#x578B;&#x4E3A;&#x5FAE;&#x4FE1;&#xFF0C;&#x4F20;&#x9012;&#x8FD9;&#x4E00;&#x5806;&#x53C2;&#x6570;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x518D;&#x5728;&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;&#x5FAE;&#x4FE1;jssdk&#x6CE8;&#x518C;voice&#x7684;play&#xFF0C;start&#xFF0C;download&#x7B49;&#x7B49;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#xFF1B;</p>
-<h2 id="&#x5927;&#x81F4;&#x6B65;&#x9AA4;"><a href="#&#x5927;&#x81F4;&#x6B65;&#x9AA4;" class="headerlink" title="&#x5927;&#x81F4;&#x6B65;&#x9AA4;"></a>&#x5927;&#x81F4;&#x6B65;&#x9AA4;</h2><h3 id="1-&#x53D1;&#x8D77;&#x5F55;&#x97F3;"><a href="#1-&#x53D1;&#x8D77;&#x5F55;&#x97F3;" class="headerlink" title="1.&#x53D1;&#x8D77;&#x5F55;&#x97F3;"></a>1.&#x53D1;&#x8D77;&#x5F55;&#x97F3;</h3><h3 id="2-&#x505C;&#x6B62;&#x5F55;&#x97F3;&#xFF08;&#x8FD4;&#x56DE;localId&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9884;&#x89C8;&#xFF0C;&#x4E0A;&#x4F20;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF09;"><a href="#2-&#x505C;&#x6B62;&#x5F55;&#x97F3;&#xFF08;&#x8FD4;&#x56DE;localId&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9884;&#x89C8;&#xFF0C;&#x4E0A;&#x4F20;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF09;" class="headerlink" title="2.&#x505C;&#x6B62;&#x5F55;&#x97F3;&#xFF08;&#x8FD4;&#x56DE;localId&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9884;&#x89C8;&#xFF0C;&#x4E0A;&#x4F20;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF09;"></a>2.&#x505C;&#x6B62;&#x5F55;&#x97F3;&#xFF08;&#x8FD4;&#x56DE;localId&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x9884;&#x89C8;&#xFF0C;&#x4E0A;&#x4F20;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF09;</h3><h3 id="3-&#x4E0A;&#x4F20;&#x5F55;&#x97F3;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x8FD4;&#x56DE;serverId&#xFF0C;&#x7528;&#x6765;&#x4E0B;&#x8F7D;&#xFF09;"><a href="#3-&#x4E0A;&#x4F20;&#x5F55;&#x97F3;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x8FD4;&#x56DE;serverId&#xFF0C;&#x7528;&#x6765;&#x4E0B;&#x8F7D;&#xFF09;" class="headerlink" title="3.&#x4E0A;&#x4F20;&#x5F55;&#x97F3;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x8FD4;&#x56DE;serverId&#xFF0C;&#x7528;&#x6765;&#x4E0B;&#x8F7D;&#xFF09;"></a>3.&#x4E0A;&#x4F20;&#x5F55;&#x97F3;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF08;&#x8FD4;&#x56DE;serverId&#xFF0C;&#x7528;&#x6765;&#x4E0B;&#x8F7D;&#xFF09;</h3><h3 id="4-&#x4E0B;&#x8F7D;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#xFF08;&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x7D20;&#x6750;&#x4E2D;&#x591A;&#x5A92;&#x4F53;&#x4E0B;&#x8F7D;&#x63A5;&#x53E3;&#xFF09;"><a href="#4-&#x4E0B;&#x8F7D;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#xFF08;&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x7D20;&#x6750;&#x4E2D;&#x591A;&#x5A92;&#x4F53;&#x4E0B;&#x8F7D;&#x63A5;&#x53E3;&#xFF09;" class="headerlink" title="4.&#x4E0B;&#x8F7D;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#xFF08;&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x7D20;&#x6750;&#x4E2D;&#x591A;&#x5A92;&#x4F53;&#x4E0B;&#x8F7D;&#x63A5;&#x53E3;&#xFF09;"></a>4.&#x4E0B;&#x8F7D;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#xFF08;&#x4F7F;&#x7528;&#x5FAE;&#x4FE1;&#x7D20;&#x6750;&#x4E2D;&#x591A;&#x5A92;&#x4F53;&#x4E0B;&#x8F7D;&#x63A5;&#x53E3;&#xFF09;</h3><h3 id="5-&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5E76;&#x4FDD;&#x5B58;&#x670D;&#x52A1;&#x5668;"><a href="#5-&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5E76;&#x4FDD;&#x5B58;&#x670D;&#x52A1;&#x5668;" class="headerlink" title="5.&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5E76;&#x4FDD;&#x5B58;&#x670D;&#x52A1;&#x5668;"></a>5.&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5E76;&#x4FDD;&#x5B58;&#x670D;&#x52A1;&#x5668;</h3><ul>
-<li><p>&#x4F7F;&#x7528;wx.startRecord&#x53D1;&#x8D77;&#x5F55;&#x97F3;&#xFF0C;&#x8FD9;&#x91CC;&#x6CE8;&#x610F;&#x7684;&#x662F;60s&#x9650;&#x5236;&#xFF1B;</p>
-</li>
-<li><p>&#x4F7F;&#x7528;&#x624B;&#x52A8;&#x63A7;&#x5236;&#x548C;&#x8D85;&#x8FC7;60s&#x81EA;&#x52A8;&#x7ED3;&#x675F;&#x5F55;&#x97F3;&#xFF0C;&#x4F7F;&#x7528;stopRecord&#x65B9;&#x6CD5;&#x505C;&#x6B62;&#xFF0C;&#x505C;&#x6B62;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;localId&#xFF1B;</p>
-</li>
-<li><p>&#x4E0A;&#x4F20;&#x5F55;&#x97F3;&#xFF08;localId&#xFF09;&#x81F3;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#xFF08;uploadVoice&#xFF09;&#xFF0C;&#x4E0A;&#x4F20;&#x6210;&#x529F;&#x540E;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;serverId&#xFF1B;</p>
-</li>
-<li><p>&#x56E0;&#x4E3A;&#x5FAE;&#x4FE1;&#x7684;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#x6709;&#x4FDD;&#x5B58;&#x671F;&#x9650;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x4E0B;&#x8F7D;&#x4E0A;&#x4F20;&#x81F3;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF1B;&#x5728;&#x4E0A;&#x4F20;&#x5FAE;&#x4FE1;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5C06;&#x5F55;&#x97F3;&#x6587;&#x4EF6;&#xFF08;serverId&#xFF09;&#x4E0A;&#x4F20;&#x81F3;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x4F4D;&#x7F6E;&#x5230;&#x6570;&#x636E;&#x5E93;&#xFF1B;</p>
-</li>
-<li><p>&#x6839;&#x636E;serverId&#x8C03;&#x7528;&#x5FAE;&#x4FE1;&#x7684;&#x591A;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x63A5;&#x53E3;&#xFF0C;&#x8FD9;&#x91CC;&#x8981;&#x53D6;&#x5F97;token&#xFF08;token&#x5EFA;&#x8BAE;&#x4FDD;&#x5B58;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7F13;&#x5B58;&#x6216;&#x8005;&#x6570;&#x636E;&#x5E93;&#xFF09;</p>
-</li>
-<li><p>&#x4E0B;&#x8F7D;&#x540E;&#x7684;&#x6587;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;amr&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;mp3&#x7B49;&#x5176;&#x4ED6;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4F7F;&#x7528;&#x7684;&#x662F;ffmpeg&#xFF1B;</p>
-</li>
-</ul>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2019/07/02/微信JSSDK语音开发大致思路/#more">Read More</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -445,7 +444,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Articles
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -455,7 +454,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Catégories
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -475,7 +474,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/klk2" target="_blank">
-                SUIVRE</a>
+                Follow</a>
         </div>
         
         
@@ -524,7 +523,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Liens
+            Links
         </h3>
         <ul class="menu-list">
         
@@ -562,7 +561,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catégories
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -591,7 +590,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            Tag Cloud
         </h3>
         <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JSSDK/" style="font-size: 10px;">JSSDK</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Supervisor/" style="font-size: 10px;">Supervisor</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/游记/" style="font-size: 10px;">游记</a>
     </div>
@@ -605,7 +604,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            Recent
         </h3>
         
         <article class="media">
@@ -631,7 +630,7 @@
             
             <a href="/2019/07/02/微信JSSDK语音开发大致思路/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信JSSDK语音开发大致思路">
+                    <img class="thumbnail" src="https://source.unsplash.com/random" alt="微信JSSDK语音开发大致思路">
                 </p>
             </a>
             
@@ -819,7 +818,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            Recent
         </h3>
         
         <article class="media">
@@ -845,7 +844,7 @@
             
             <a href="/2019/07/02/微信JSSDK语音开发大致思路/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信JSSDK语音开发大致思路">
+                    <img class="thumbnail" src="https://source.unsplash.com/random" alt="微信JSSDK语音开发大致思路">
                 </p>
             </a>
             
@@ -1188,9 +1187,9 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Articles',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Catégories',
+                CATEGORIES: 'Categories',
                 TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },

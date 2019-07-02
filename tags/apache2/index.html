@@ -173,7 +173,7 @@
             
         </h1>
         <div class="content">
-            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    Redirect permanent / https://www.example.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">    DocumentRoot /home/user/example/www</span><br><span class="line">    ErrorDocument 503 /maintenance.html</span><br><span class="line">    ProxyRequests on</span><br><span class="line">    ProxyPass /maintenance.html !</span><br><span class="line">    ProxyPass / http://localhost:9090/ retry=0</span><br><span class="line">    ProxyPassReverse / http://localhost:9090/ retry=0</span><br><span class="line">    # &#x5F3A;&#x5236;https</span><br><span class="line">    RewriteEngine on</span><br><span class="line">    RewriteCond  %{HTTPS} !=on</span><br><span class="line">    RewriteRule  ^(.*) https://%{SERVER_NAME}$1 [L,R]</span><br><span class="line">    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    RewriteRule .* - [F]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight apache hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> example.com</span><br><span class="line">    <span class="hljs-attribute">Redirect</span> permanent / https://www.example.com/</span><br><span class="line"><span class="hljs-section">&lt;/VirtualHost&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-section">&lt;VirtualHost *:80&gt;</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ServerName</span></span> www.example.com</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">DocumentRoot</span></span> /home/user/example/www</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">ErrorDocument</span></span> 503 /maintenance.html</span><br><span class="line">    <span class="hljs-attribute">ProxyRequests</span> <span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute">ProxyPass</span> /maintenance.html !</span><br><span class="line">    <span class="hljs-attribute">ProxyPass</span> / http://localhost:9090/ retry=0</span><br><span class="line">    <span class="hljs-attribute">ProxyPassReverse</span> / http://localhost:9090/ retry=0</span><br><span class="line">    <span class="hljs-comment"># &#x5F3A;&#x5236;https</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteEngine</span></span> <span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteCond</span></span>  <span class="hljs-variable">%{HTTPS}</span> !=<span class="hljs-literal">on</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteRule</span></span>  ^(.*) https://<span class="hljs-variable">%{SERVER_NAME}</span><span class="hljs-number">$1</span><span class="hljs-meta"> [L,R]</span></span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteCond</span></span> <span class="hljs-variable">%{REQUEST_METHOD}</span> ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    <span class="hljs-attribute"><span class="hljs-nomarkup">RewriteRule</span></span> .* -<span class="hljs-meta"> [F]</span></span><br><span class="line"><span class="hljs-section">&lt;/VirtualHost&gt;</span></span><br></pre></td></tr></table></figure>
         </div>
         
         
@@ -230,7 +230,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Articles
+                        Posts
                     </p>
                     <p class="title has-text-weight-normal">
                         5
@@ -240,7 +240,7 @@
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        Catégories
+                        Categories
                     </p>
                     <p class="title has-text-weight-normal">
                         2
@@ -260,7 +260,7 @@
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="https://github.com/klk2" target="_blank">
-                SUIVRE</a>
+                Follow</a>
         </div>
         
         
@@ -309,7 +309,7 @@
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            Liens
+            Links
         </h3>
         <ul class="menu-list">
         
@@ -347,7 +347,7 @@
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                Catégories
+                Categories
             </h3>
             <ul class="menu-list">
             <li>
@@ -376,7 +376,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Nuage de tags
+            Tag Cloud
         </h3>
         <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/JSSDK/" style="font-size: 10px;">JSSDK</a> <a href="/tags/NodeJS/" style="font-size: 10px;">NodeJS</a> <a href="/tags/Supervisor/" style="font-size: 10px;">Supervisor</a> <a href="/tags/apache2/" style="font-size: 10px;">apache2</a> <a href="/tags/微信/" style="font-size: 10px;">微信</a> <a href="/tags/游记/" style="font-size: 10px;">游记</a>
     </div>
@@ -390,7 +390,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            Recent
         </h3>
         
         <article class="media">
@@ -416,7 +416,7 @@
             
             <a href="/2019/07/02/微信JSSDK语音开发大致思路/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信JSSDK语音开发大致思路">
+                    <img class="thumbnail" src="https://source.unsplash.com/random" alt="微信JSSDK语音开发大致思路">
                 </p>
             </a>
             
@@ -604,7 +604,7 @@
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            Récents
+            Recent
         </h3>
         
         <article class="media">
@@ -630,7 +630,7 @@
             
             <a href="/2019/07/02/微信JSSDK语音开发大致思路/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="微信JSSDK语音开发大致思路">
+                    <img class="thumbnail" src="https://source.unsplash.com/random" alt="微信JSSDK语音开发大致思路">
                 </p>
             </a>
             
@@ -973,9 +973,9 @@ document.addEventListener('DOMContentLoaded', function () {
     (function (window) {
         var INSIGHT_CONFIG = {
             TRANSLATION: {
-                POSTS: 'Articles',
+                POSTS: 'Posts',
                 PAGES: 'Pages',
-                CATEGORIES: 'Catégories',
+                CATEGORIES: 'Categories',
                 TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
