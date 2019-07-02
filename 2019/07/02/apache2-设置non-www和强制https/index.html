@@ -2,22 +2,24 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: NodeJS - klk2</title>
+<title>apache2 设置non www和强制https - klk2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="klk2 Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="klk2">
-<meta property="og:url" content="https://klk2.github.io/tags/NodeJS/index.html">
+    <meta name="description" content="config1234567891011121314151617181920&amp;lt;VirtualHost *:80&amp;gt;    ServerName example.com    Redirect permanent / https://www.example.com/&amp;lt;/VirtualHost&amp;gt;&amp;lt;VirtualHost *:80&amp;gt;    ServerName www.e">
+<meta name="keywords" content="apache2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apache2 设置non www和强制https">
+<meta property="og:url" content="https://klk2.github.io/2019/07/02/apache2-设置non-www和强制https/index.html">
 <meta property="og:site_name" content="klk2">
-<meta property="og:description" content="klk2 Blog">
+<meta property="og:description" content="config1234567891011121314151617181920&amp;lt;VirtualHost *:80&amp;gt;    ServerName example.com    Redirect permanent / https://www.example.com/&amp;lt;/VirtualHost&amp;gt;&amp;lt;VirtualHost *:80&amp;gt;    ServerName www.e">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://klk2.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-07-02T02:22:06.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="klk2">
-<meta name="twitter:description" content="klk2 Blog">
+<meta name="twitter:title" content="apache2 设置non www和强制https">
+<meta name="twitter:description" content="config1234567891011121314151617181920&amp;lt;VirtualHost *:80&amp;gt;    ServerName example.com    Redirect permanent / https://www.example.com/&amp;lt;/VirtualHost&amp;gt;&amp;lt;VirtualHost *:80&amp;gt;    ServerName www.e">
 <meta name="twitter:image" content="https://klk2.github.io/images/og_image.png">
 
 
@@ -92,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.svg" alt="klk2" height="28">
+                <img src="/images/logo.svg" alt="apache2 设置non www和强制https" height="28">
             
             </a>
         </div>
@@ -138,39 +140,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">Tag</a></li>
-            <li class="is-active"><a href="#" aria-current="page">NodeJS</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/06/28/Supervisor-配置nodejs的环境变量/" class="image is-7by1">
-            <img class="thumbnail" src="https://source.unsplash.com/daily" alt="Supervisor 配置nodejs的环境变量">
-        </a>
-    </div>
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-28T05:50:58.000Z">2019-06-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/NodeJS/">NodeJS</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-07-02T02:21:24.000Z">2019-07-02</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds membaca (Sekitar 79 kata)
+                    a few seconds membaca (Sekitar 61 kata)
                 </span>
                 
                 
@@ -179,22 +160,27 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/06/28/Supervisor-配置nodejs的环境变量/">Supervisor 配置nodejs的环境变量</a>
+                apache2 设置non www和强制https
             
         </h1>
         <div class="content">
-            <p><a href="http://supervisord.org/" target="_blank" rel="noopener">Supervisor</a> &#x662F;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;/&#x670D;&#x52A1;&#x5668;&#x7CFB;&#x7EDF;&#xFF0C;&#x5141;&#x8BB8;&#x5176;&#x7528;&#x6237;&#x76D1;&#x89C6;&#x548C;&#x63A7;&#x5236;&#x7C7B;UNIX&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x3002;</p>
+            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    Redirect permanent / https://www.example.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">    DocumentRoot /home/user/example/www</span><br><span class="line">    ErrorDocument 503 /maintenance.html</span><br><span class="line">    ProxyRequests on</span><br><span class="line">    ProxyPass /maintenance.html !</span><br><span class="line">    ProxyPass / http://localhost:9090/ retry=0</span><br><span class="line">    ProxyPassReverse / http://localhost:9090/ retry=0</span><br><span class="line">    # &#x5F3A;&#x5236;https</span><br><span class="line">    RewriteEngine on</span><br><span class="line">    RewriteCond  %{HTTPS} !=on</span><br><span class="line">    RewriteRule  ^(.*) https://%{SERVER_NAME}$1 [L,R]</span><br><span class="line">    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    RewriteRule .* - [F]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/28/Supervisor-配置nodejs的环境变量/#more">Selengkapnya</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/apache2/">apache2</a>
                 </div>
             </div>
         </div>
         
+        
+        
+        <div class="social-share"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css">
+<script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script>
         
     </div>
 </div>
@@ -203,9 +189,45 @@
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/07/02/微信JSSDK语音开发大致思路/">
+                <span class="level-item">微信JSSDK语音开发大致思路</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Komentar</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'https://klk2.github.io/2019/07/02/apache2-设置non-www和强制https/';
+        this.page.identifier = '2019/07/02/apache2-设置non-www和强制https/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'https-klk2-github-io' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
 </div>
                 
 
@@ -833,7 +855,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.svg" alt="klk2" height="28">
+                    <img src="/images/logo.svg" alt="apache2 设置non www和强制https" height="28">
                 
                 </a>
                 <p class="is-size-7">

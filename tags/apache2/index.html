@@ -2,7 +2,7 @@
 <html lang="zh">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>Tag: NodeJS - klk2</title>
+<title>Tag: apache2 - klk2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
@@ -10,7 +10,7 @@
     <meta name="description" content="klk2 Blog">
 <meta property="og:type" content="website">
 <meta property="og:title" content="klk2">
-<meta property="og:url" content="https://klk2.github.io/tags/NodeJS/index.html">
+<meta property="og:url" content="https://klk2.github.io/tags/apache2/index.html">
 <meta property="og:site_name" content="klk2">
 <meta property="og:description" content="klk2 Blog">
 <meta property="og:locale" content="zh">
@@ -142,7 +142,7 @@
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
             <li><a href="/tags">Tag</a></li>
-            <li class="is-active"><a href="#" aria-current="page">NodeJS</a></li>
+            <li class="is-active"><a href="#" aria-current="page">apache2</a></li>
         </ul>
         </nav>
     </div>
@@ -150,27 +150,17 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/06/28/Supervisor-配置nodejs的环境变量/" class="image is-7by1">
-            <img class="thumbnail" src="https://source.unsplash.com/daily" alt="Supervisor 配置nodejs的环境变量">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-06-28T05:50:58.000Z">2019-06-28</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/NodeJS/">NodeJS</a>
-                </div>
+                <time class="level-item has-text-grey" datetime="2019-07-02T02:21:24.000Z">2019-07-02</time>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    a few seconds membaca (Sekitar 79 kata)
+                    a few seconds membaca (Sekitar 61 kata)
                 </span>
                 
                 
@@ -179,21 +169,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/06/28/Supervisor-配置nodejs的环境变量/">Supervisor 配置nodejs的环境变量</a>
+                <a class="has-link-black-ter" href="/2019/07/02/apache2-设置non-www和强制https/">apache2 设置non www和强制https</a>
             
         </h1>
         <div class="content">
-            <p><a href="http://supervisord.org/" target="_blank" rel="noopener">Supervisor</a> &#x662F;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;/&#x670D;&#x52A1;&#x5668;&#x7CFB;&#x7EDF;&#xFF0C;&#x5141;&#x8BB8;&#x5176;&#x7528;&#x6237;&#x76D1;&#x89C6;&#x548C;&#x63A7;&#x5236;&#x7C7B;UNIX&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x8BB8;&#x591A;&#x8FDB;&#x7A0B;&#x3002;</p>
+            <h3 id="config"><a href="#config" class="headerlink" title="config"></a>config</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName example.com</span><br><span class="line">    Redirect permanent / https://www.example.com/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br><span class="line"></span><br><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">    DocumentRoot /home/user/example/www</span><br><span class="line">    ErrorDocument 503 /maintenance.html</span><br><span class="line">    ProxyRequests on</span><br><span class="line">    ProxyPass /maintenance.html !</span><br><span class="line">    ProxyPass / http://localhost:9090/ retry=0</span><br><span class="line">    ProxyPassReverse / http://localhost:9090/ retry=0</span><br><span class="line">    # &#x5F3A;&#x5236;https</span><br><span class="line">    RewriteEngine on</span><br><span class="line">    RewriteCond  %{HTTPS} !=on</span><br><span class="line">    RewriteRule  ^(.*) https://%{SERVER_NAME}$1 [L,R]</span><br><span class="line">    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|PUT|DELETE|CONNECT|OPTIONS)</span><br><span class="line">    RewriteRule .* - [F]</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2019/06/28/Supervisor-配置nodejs的环境变量/#more">Selengkapnya</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
